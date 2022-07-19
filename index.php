@@ -5,17 +5,17 @@
 		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
 	</head>
 <body>
-	<div class="col-md-3"></div>
-	<div class="col-md-6 well">
+	<div class="col-xl-3"></div>
+	<div class="col-xl-6 well">
 		<h3 class="text-primary">PHP - Simple To Do List App</h3>
 		<hr style="border-top:1px dotted #ccc;"/>
 		<div class="col-md-2"></div>
 		<div class="col-md-8">
 			<center>
 				<form method="POST" class="form-inline" action="add_query.php">
-					<input type="text" class="form-control" name="task" required/>
-					<input type="text" class="form-control" name="activity" required/>
-					<input type="date" class="form-control" name="dateline" required/>
+					<input type="text" class="form-control" name="task" placeholder="Task Name" required/>
+					<input type="text" class="form-control" name="activity" placeholder="Activity" required/>
+					<input type="date" class="form-control" name="dateline" placeholder="Dateline" required/>
 					<button class="btn btn-primary form-control" name="add">Add Task</button>
 				</form>
 			</center>
@@ -44,7 +44,7 @@
 					<td><?php echo $fetch['Name']?></td>
 					<td><?php echo $fetch['Activity']?></td>
 					<td><?php echo $fetch['State']?></td>
-					<td colspan="2">
+					<td colspan="3">
 						<center>
 							<?php
 								if($fetch['State'] != "Done"){
@@ -55,7 +55,6 @@
 							 <a href="delete_query.php?id=<?php echo $fetch['id']?>" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></a>
 						</center>
 					</td>
-					<td><?php echo $fetch['Activity']?></td>
 					<td><?php echo $fetch['Dateline']?></td>
 				</tr>
 				<?php
