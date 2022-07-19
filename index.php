@@ -63,5 +63,11 @@
 			</tbody>
 		</table>
 	</div>
-</body>
+
+
+	<a href="done_tasks.php?" class="btn btn-success">Completed tasks</a>
+
+	<a href="productivity_score.php?" class="btn btn-success">Productivity Score</a>
+	
+	</body>
 </html>
