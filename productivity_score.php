@@ -2,25 +2,56 @@
 <?php
 
 require 'conn.php';
-$sql = "SELECT Name, Activity, Dateline FROM tasks WHERE State = 'Done'";
-if ($result = mysqli_query($conn, $sql)) {
-	$rowcount = mysqli_num_rows($result);
+$done_count;
+$tasksCount;
+$tasks;
+$done_tasks;
+$productivity_score;
+
+function getDoneTasks() {
+	$sql = "SELECT Name, Activity, Dateline FROM tasks WHERE State = 'Done' ";
+	if ($done_tasks = mysqli_query($conn, $sql)) {
+		$done_count = mysqli_num_rows($done_tasks);
+	}
+	return $done_count;
+}
+
+$sql = "SELECT Name, Activity, Dateline FROM tasks WHERE State = 'Done' ";
+if ($done_tasks = mysqli_query($conn, $sql)) {
+	$done_count = mysqli_num_rows($done_tasks);
 }
 
 $sql1 = "SELECT * FROM tasks";
-if ($result1 = mysqli_query($conn, $sql1)) {
-	$rowcount1 = mysqli_num_rows($result1);
+	if ($tasks = mysqli_query($conn, $sql1)) {
+		$tasksCount = mysqli_num_rows($tasks);
+	}
+
+function getAllTasks()
+{
+	$sql1 = "SELECT * FROM tasks";
+	if ($tasks = mysqli_query($conn, $sql1)) {
+		$tasksCount = mysqli_num_rows($tasks);
+	}
+	return $tasksCount;
 }
 
 
-$productivity_score = ($rowcount / $rowcount1) ;
+function getScore(){
+	getDoneTasks();
+	getAllTasks();
+	$productivity_score = ($done_count / $tasksCount) ;
+	return $productivity_score;
+}
+
+// getScore();
+$productivity_score = ($done_count / $tasksCount) ;
 
 // echo "Number of Done tasks is ", $rowcount."<br>";
 
 // echo "Total number of tasks is ", $rowcount1."<br>";
 
 echo "Productivity Score is ", $productivity_score."<br>";
-echo $result;
+// echo "$sql";
 
 
 

@@ -22,14 +22,16 @@
 			<hr style="border-top:1px dotted #ccc;"/>
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
-				<center>
+				<div class="d-flex justify-content-center">
 					<form method="POST" class="form-inline" action="add_query.php">
 						<input type="text" class="form-control" name="task" placeholder="Task Name" required/>
 						<input type="text" class="form-control" name="activity" placeholder="Activity" required/>
 						<input type="date" class="form-control" name="dateline" placeholder="Dateline" required/>
 						<button class="btn btn-primary form-control" name="add">Add Task</button>
 					</form>
-				</center>
+				</div>
+					
+				
 			</div>
 			<br /><br /><br />
 			<table class="table table-bordered table-responsive table-striped table-light">
@@ -46,6 +48,8 @@
 				<tbody>
 					<?php
 						require 'conn.php';
+						include 'done_tasks.php';
+						include 'productivity_score.php';
 						$query = $conn->query("SELECT * FROM `tasks` ORDER BY `id` ASC");
 						$count = 1;
 						while($fetch = $query->fetch_array()){
@@ -76,9 +80,9 @@
 		</div>
 
 		<div class="action-btns d-flex">
-			<a href="done_tasks.php?" class="btn btn-info">Completed tasks</a>
+			<a (click)="getDoneTasks()" class="btn btn-info">Completed tasks</a>
 
-			<a href="productivity_score.php?" class="btn btn-warning">Productivity Score</a>
+			<a (click)="getScore()" class="btn btn-warning">Productivity Score</a>
 		</div>
 	</div>
 	
