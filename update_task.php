@@ -1,4 +1,6 @@
 
+
+
 <?php
 	require_once 'conn.php';
 	
@@ -8,5 +10,6 @@
 		$conn->query("UPDATE `tasks` SET `State` = 'Done' WHERE `id` = $id") or die(mysqli_errno());
 		header('location: index.php');
 	}
+
 
 ?>

@@ -1,4 +1,3 @@
-
 <?php
 	require_once 'conn.php';
 	if(ISSET($_POST['add'])){
@@ -12,5 +11,4 @@
 			header('location:index.php');
 		}
 	}
-
 ?>

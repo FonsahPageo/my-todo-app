@@ -1,4 +1,3 @@
-
 <?php
 
 require 'conn.php';
@@ -52,7 +51,5 @@ $productivity_score = ($done_count / $tasksCount) ;
 
 echo "Productivity Score is ", $productivity_score."<br>";
 // echo "$sql";
-
-
 
 ?>

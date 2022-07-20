@@ -1,4 +1,3 @@
-
 <?php
 
 $servername = "localhost";
@@ -10,5 +9,4 @@ $dbname = "todo";
 	if(!$conn){
 		die("Error: Cannot connect to the database");
 	}
-
 ?>

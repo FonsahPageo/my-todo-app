@@ -1,4 +1,3 @@
-
 <?php
 
 require 'conn.php';
@@ -10,4 +9,5 @@ if(!$result->num_rows > 0) {
 		echo $row["Name"].$row["Activity"].$row["Dateline"]."<br>";
 	}
 }	
+
 ?>

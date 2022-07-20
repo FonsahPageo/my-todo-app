@@ -1,4 +1,3 @@
-
 <?php
 	require_once 'conn.php';
 	
@@ -8,5 +7,4 @@
 		$conn->query("DELETE FROM `tasks` WHERE `id` = $id") or die(mysqli_errno());
 		header("location: index.php");
 	}	
-
 ?>
