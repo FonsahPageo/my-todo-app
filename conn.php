@@ -1,16 +1,12 @@
-<<<<<<< HEAD
 <?php
-	$conn = new mysqli("localhost", "root", "", "todo");
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "todo";
+	$conn = new mysqli($servername, $username, $password, $dbname);
 	
 	if(!$conn){
 		die("Error: Cannot connect to the database");
 	}
-=======
-<?php
-	$conn = new mysqli("localhost", "root", "", "todo");
-	
-	if(!$conn){
-		die("Error: Cannot connect to the database");
-	}
->>>>>>> 2d15fc06d0e9b82f684741a37817d6802e0ba733
 ?>
