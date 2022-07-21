@@ -1,5 +1,7 @@
+<?php require_once 'conn.php'; ?>
 <?php
-	require_once 'conn.php';
+$conn = connect();
+	
 	if(ISSET($_POST['add'])){
 		if($_POST['task'] != ""){
 			$task = $_POST['task'];

@@ -1,6 +1,10 @@
+
+<?php require_once 'conn.php'; 
+ $conn = connect();
+?>
+
 <?php
 
-require 'conn.php';
 $sql = "SELECT Name, Activity, Dateline FROM tasks WHERE State = 'Done'";
 $result = $conn->query($sql);
    
