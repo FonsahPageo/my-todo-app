@@ -11,3 +11,6 @@ Users fill in Tasks, activities to be carried out and dateline for each task thr
 With the click of a button the task is added to the list of tasks and the info stored in a database, and displayed in a table.
 With the click of a button, a user can either mark a task's state as done, or delete a task from the list.
 All the actions taken by the user(adding tasks, marking tasks as done or deleting tasks) are updated in the database.
+#queries
+Users can get a list of tasks frorm the list which have already been completed
+Users can get a productivity score(number of completed tasks per total number of tasks)
