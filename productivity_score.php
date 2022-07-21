@@ -46,18 +46,4 @@ function getOrderedTasks($net) {
 }
 
 
-list($doneTasks, $doneCount) = getDoneTasks($conn);
-list($undoneTasks, $undoneCount) = getUnDoneTasks($conn);
-list($allTasks, $tasksCount) = getAllTasks($conn);
-
-
-$productivity_score = ($doneCount / $tasksCount) ;
-
-// echo "Number of Done tasks is ", $rowcount."<br>";
-
-// echo "Total number of tasks is ", $rowcount1."<br>";
-
-// echo "Productivity Score is ", $productivity_score;
-
-
 ?>

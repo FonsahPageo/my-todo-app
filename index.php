@@ -8,6 +8,10 @@ $conn = connect();
 
 $query = getOrderedTasks($conn);
 list($doneTasks, $doneCount) = getDoneTasks($conn);
+list($undoneTasks, $undoneCount) = getUnDoneTasks($conn);
+list($allTasks, $tasksCount) = getAllTasks($conn);
+$productivity_score = ($doneCount / $tasksCount) ;
+$deproductivity_score = ($undoneCount / $tasksCount) ;
 
 $count = 1;
 ?>
@@ -48,7 +52,7 @@ $count = 1;
 				</div>
 
 			</div>
-			<br /><br /><br />
+			<br /><br />
 			<table class="table table-bordered table-responsive table-striped table-light">
 				<thead class="table-dark">
 					<tr>
@@ -106,10 +110,32 @@ $count = 1;
 		<?php
 			}
 			echo "</table>";
+			echo "</div>";
 		} elseif (array_key_exists('productivityBtn', $_POST)) {
-			# code...
-		}
-		?>
+			echo "<div class=\" completed\">";
+			echo "<h3>Productivity Score</h3>";
+			echo "<table class=\"table table-responsive table-striped\">";
+		?> 
+			<tr>
+				<th>Tasks Completed</th>
+				<td><?php echo $doneCount ?></td>
+			</tr>
+			<tr>
+				<th>Tasks Incomplete</th>
+				<td><?php echo $undoneCount ?></td>
+			</tr>
+			<tr>
+				<th>Productivity Score</th>
+				<td><?php echo $productivity_score ?></td>
+			</tr>
+			<tr>
+				<th>Deproductivity Score</th>
+				<td><?php echo $deproductivity_score ?></td>
+			</tr>
+		<?php 
+		echo "</table>";
+		echo "</div>";
+	}?>
 
 		<form method="post" class="action-btns d-flex">
 			<input type="submit" name="completedBtn" class="btn btn-info" value="Completed tasks">
